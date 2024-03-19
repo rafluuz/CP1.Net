@@ -1,0 +1,26 @@
+﻿@model List<CP1.Net.Models.Livro>
+
+@{
+    ViewData["Title"] = "Home Livraria";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Livraria - RM551857 | RM98175</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <p>Esta é a página inicial da Livraria.</p>
+
+</div>
+
+@if (Model != null && Model.Count > 0)
+{
+    <ul>
+        @foreach (var livro in Model)
+        {
+            <li>@livro.Titulo - @livro.Autor.Nome - Preço: @livro.Preco.ToString("C")</li>
+        }
+    </ul>
+}
+else
+{
+    <p>Nenhum livro disponível.</p>
+}
